@@ -272,4 +272,4 @@ print(answer if answer.strip() else "[警告] 模型返回了空回复，本次�
 ---
 
 > 上一篇：[虚拟文件系统](../ch03-虚拟文件系统/README.md)
-> 下一篇预告：第 5 章子 Agent —— 用 `task` 工具委派任务与上下文隔离
+> 下一篇：[子 Agent 与上下文隔离](../ch05-子Agent与上下文隔离/README.md)

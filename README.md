@@ -10,6 +10,7 @@
 | [第一个工具调用 Agent](ch02-第一个Agent/README.md) | 第 2 章（上）：`create_deep_agent` 快速开始，tools 四步分工、`agent.invoke` 执行流程、平台切换三变量改造，含三个真实踩坑记录 | 2026-09-16 |
 | [虚拟文件系统](ch03-虚拟文件系统/README.md) | 第 3 章：Context Engineering 核心，七个文件工具、上下文自动管理双防线、六个存储后端对比、权限控制，附"文件到底存哪"追问记录 | 2026-09-20 |
 | [任务规划与分解](ch04-任务规划/README.md) | 第 4 章：write_todos 任务规划在 v0.7 按需启用，Middleware 两类 Hook 机制、TodoList 源码级剖析、trigger 与摘要实现，附多步骤 Search Agent 实操与 LangSmith Trace | 2026-09-23 |
+| [子 Agent 与上下文隔离](ch05-子Agent与上下文隔离/README.md) | 第 5 章：Context Quarantine 上下文隔离，task 委派、字典/general-purpose/CompiledSubAgent 三种形态、多子 Agent 协作与结构化 JSON 输出，附字段继承规则与排查表 | 2026-09-25 |
 
 ## 目录结构
 
@@ -24,7 +25,10 @@
 ├── ch03-虚拟文件系统/          # 第 3 章学习笔记
 │   ├── README.md              # 笔记正文
 │   └── imgs/                  # 课程配图
-└── ch04-任务规划/             # 第 4 章学习笔记
+├── ch04-任务规划/             # 第 4 章学习笔记
+│   ├── README.md              # 笔记正文
+│   └── imgs/                  # 课程配图与 LangSmith Trace 截图
+└── ch05-子Agent与上下文隔离/  # 第 5 章学习笔记
     ├── README.md              # 笔记正文
-    └── imgs/                  # 课程配图与 LangSmith Trace 截图
+    └── imgs/                  # 课程配图
 ```
