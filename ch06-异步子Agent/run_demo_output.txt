@@ -1,0 +1,588 @@
+async-subagent-demo$ python run_demo.py
+thread_id = 01a0e8b0-7a68-7460-917e-7e896960d16e
+\n=== first response ===
+{'async_tasks': {'01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8': {'agent_name': 'researcher',
+                                                          'created_at': '2026-09-28T15:44:42Z',
+                                                          'last_checked_at': '2026-09-28T15:44:42Z',
+                                                          'last_updated_at': '2026-09-28T15:44:42Z',
+                                                          'run_id': '01a0e8b0-96ae-7211-be1f-89e0877a0c51',
+                                                          'status': 'running',
+                                                          'task_id': '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8',
+                                                          'thread_id': '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8'}},
+ 'files': {},
+ 'messages': [{'additional_kwargs': {},
+               'content': '请把这个任务交给 researcher 异步处理：用后台任务总结 async subagent '
+                          '的关键行为。',
+               'id': 'd7b99112-ed93-437d-93d0-c1500cd0d919',
+               'name': None,
+               'response_metadata': {},
+               'type': 'human'},
+              {'additional_kwargs': {},
+               'content': [{'arguments': '{"description":"请总结 async subagent '
+                                         '的关键行为。你需要研究并梳理 async subagent '
+                                         '的核心机制，包括：1) '
+                                         '它的启动方式（start_async_task）；2) '
+                                         '它的运行模式（后台运行、立即返回 task_id）；3) '
+                                         '它的状态查询机制（check_async_task、list_async_tasks）；4) '
+                                         '它的任务更新与取消机制（update_async_task、cancel_async_task）；5) '
+                                         '它与同步 subagent '
+                                         '的区别。最后以清晰的要点列表形式输出总结报告。","subagent_type":"researcher"}',
+                            'call_id': 'call_bb6b5ef093b549389889a8c9',
+                            'id': 'fc_b4760ecdb51c459f922b0b7f96a797f2',
+                            'name': 'start_async_task',
+                            'status': 'completed',
+                            'type': 'function_call'},
+                           {'annotations': [],
+                            'id': 'msg_560c618569c446d1bb0216a8446d3838',
+                            'text': '\n\n',
+                            'type': 'text'}],
+               'id': 'resp_8ae9b17d6b904ae0a1b450d8f769af0e',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610277.0,
+                                     'id': 'resp_8ae9b17d6b904ae0a1b450d8f769af0e',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [{'args': {'description': '请总结 async subagent '
+                                                       '的关键行为。你需要研究并梳理 async '
+                                                       'subagent 的核心机制，包括：1) '
+                                                       '它的启动方式（start_async_task）；2) '
+                                                       '它的运行模式（后台运行、立即返回 '
+                                                       'task_id）；3) '
+                                                       '它的状态查询机制（check_async_task、list_async_tasks）；4) '
+                                                       '它的任务更新与取消机制（update_async_task、cancel_async_task）；5) '
+                                                       '它与同步 subagent '
+                                                       '的区别。最后以清晰的要点列表形式输出总结报告。',
+                                        'subagent_type': 'researcher'},
+                               'id': 'call_bb6b5ef093b549389889a8c9',
+                               'name': 'start_async_task',
+                               'type': 'tool_call'}],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2003},
+                                  'input_tokens': 3650,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 345,
+                                  'total_tokens': 3995}},
+              {'additional_kwargs': {},
+               'artifact': None,
+               'content': 'Launched async subagent. task_id: '
+                          '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8',
+               'id': 'ea6ec2aa-bfd5-40cb-a93f-328a2e53b945',
+               'name': 'start_async_task',
+               'response_metadata': {},
+               'status': 'success',
+               'tool_call_id': 'call_bb6b5ef093b549389889a8c9',
+               'type': 'tool'},
+              {'additional_kwargs': {},
+               'content': [{'annotations': [],
+                            'id': 'msg_a917a18fe8f8425fb236a0c9e3f8e49a',
+                            'text': '已将任务交给 researcher 异步处理。\n'
+                                    '\n'
+                                    '**任务详情：**\n'
+                                    '- **任务 ID：** '
+                                    '`01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8`\n'
+                                    '- **任务内容：** 总结 async subagent '
+                                    '的关键行为，包括启动方式、后台运行模式、状态查询、任务更新与取消机制，以及它与同步 '
+                                    'subagent 的区别。\n'
+                                    '- **处理方式：** 后台异步运行，任务完成后可随时查看结果。\n'
+                                    '\n'
+                                    '需要查看进度或结果时，告诉我即可，我会为你查询该任务的最新状态。',
+                            'type': 'text'}],
+               'id': 'resp_99b04d5b1e414ad5a62c1733b3d9b362',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610282.0,
+                                     'id': 'resp_99b04d5b1e414ad5a62c1733b3d9b362',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2022},
+                                  'input_tokens': 3903,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 157,
+                                  'total_tokens': 4060}}]}
+\n=== second response ===
+{'async_tasks': {'01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8': {'agent_name': 'researcher',
+                                                          'created_at': '2026-09-28T15:44:42Z',
+                                                          'last_checked_at': '2026-09-28T15:44:47Z',
+                                                          'last_updated_at': '2026-09-28T15:44:42Z',
+                                                          'run_id': '01a0e8b0-96ae-7211-be1f-89e0877a0c51',
+                                                          'status': 'running',
+                                                          'task_id': '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8',
+                                                          'thread_id': '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8'}},
+ 'files': {},
+ 'messages': [{'additional_kwargs': {},
+               'content': '请把这个任务交给 researcher 异步处理：用后台任务总结 async subagent '
+                          '的关键行为。',
+               'id': 'd7b99112-ed93-437d-93d0-c1500cd0d919',
+               'name': None,
+               'response_metadata': {},
+               'type': 'human'},
+              {'additional_kwargs': {},
+               'content': [{'arguments': '{"description":"请总结 async subagent '
+                                         '的关键行为。你需要研究并梳理 async subagent '
+                                         '的核心机制，包括：1) '
+                                         '它的启动方式（start_async_task）；2) '
+                                         '它的运行模式（后台运行、立即返回 task_id）；3) '
+                                         '它的状态查询机制（check_async_task、list_async_tasks）；4) '
+                                         '它的任务更新与取消机制（update_async_task、cancel_async_task）；5) '
+                                         '它与同步 subagent '
+                                         '的区别。最后以清晰的要点列表形式输出总结报告。","subagent_type":"researcher"}',
+                            'call_id': 'call_bb6b5ef093b549389889a8c9',
+                            'id': 'fc_b4760ecdb51c459f922b0b7f96a797f2',
+                            'name': 'start_async_task',
+                            'status': 'completed',
+                            'type': 'function_call'},
+                           {'annotations': [],
+                            'id': 'msg_560c618569c446d1bb0216a8446d3838',
+                            'text': '\n\n',
+                            'type': 'text'}],
+               'id': 'resp_8ae9b17d6b904ae0a1b450d8f769af0e',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610277.0,
+                                     'id': 'resp_8ae9b17d6b904ae0a1b450d8f769af0e',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [{'args': {'description': '请总结 async subagent '
+                                                       '的关键行为。你需要研究并梳理 async '
+                                                       'subagent 的核心机制，包括：1) '
+                                                       '它的启动方式（start_async_task）；2) '
+                                                       '它的运行模式（后台运行、立即返回 '
+                                                       'task_id）；3) '
+                                                       '它的状态查询机制（check_async_task、list_async_tasks）；4) '
+                                                       '它的任务更新与取消机制（update_async_task、cancel_async_task）；5) '
+                                                       '它与同步 subagent '
+                                                       '的区别。最后以清晰的要点列表形式输出总结报告。',
+                                        'subagent_type': 'researcher'},
+                               'id': 'call_bb6b5ef093b549389889a8c9',
+                               'name': 'start_async_task',
+                               'type': 'tool_call'}],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2003},
+                                  'input_tokens': 3650,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 345,
+                                  'total_tokens': 3995}},
+              {'additional_kwargs': {},
+               'artifact': None,
+               'content': 'Launched async subagent. task_id: '
+                          '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8',
+               'id': 'ea6ec2aa-bfd5-40cb-a93f-328a2e53b945',
+               'name': 'start_async_task',
+               'response_metadata': {},
+               'status': 'success',
+               'tool_call_id': 'call_bb6b5ef093b549389889a8c9',
+               'type': 'tool'},
+              {'additional_kwargs': {},
+               'content': [{'annotations': [],
+                            'id': 'msg_a917a18fe8f8425fb236a0c9e3f8e49a',
+                            'text': '已将任务交给 researcher 异步处理。\n'
+                                    '\n'
+                                    '**任务详情：**\n'
+                                    '- **任务 ID：** '
+                                    '`01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8`\n'
+                                    '- **任务内容：** 总结 async subagent '
+                                    '的关键行为，包括启动方式、后台运行模式、状态查询、任务更新与取消机制，以及它与同步 '
+                                    'subagent 的区别。\n'
+                                    '- **处理方式：** 后台异步运行，任务完成后可随时查看结果。\n'
+                                    '\n'
+                                    '需要查看进度或结果时，告诉我即可，我会为你查询该任务的最新状态。',
+                            'type': 'text'}],
+               'id': 'resp_99b04d5b1e414ad5a62c1733b3d9b362',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610282.0,
+                                     'id': 'resp_99b04d5b1e414ad5a62c1733b3d9b362',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2022},
+                                  'input_tokens': 3903,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 157,
+                                  'total_tokens': 4060}},
+              {'additional_kwargs': {},
+               'content': '刚才那个后台任务现在进展如何？',
+               'id': '4b9c1921-8751-4d63-adc2-3433d3091297',
+               'name': None,
+               'response_metadata': {},
+               'type': 'human'},
+              {'additional_kwargs': {},
+               'content': [{'arguments': '{"task_id":"01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8"}',
+                            'call_id': 'call_46d55869c0864834a666f5a7',
+                            'id': 'fc_82201738d544464499e82843e7d53c9e',
+                            'name': 'check_async_task',
+                            'status': 'completed',
+                            'type': 'function_call'},
+                           {'annotations': [],
+                            'id': 'msg_c2fb847b2c4f48e8a57bdb9e3b47af6d',
+                            'text': '\n\n',
+                            'type': 'text'}],
+               'id': 'resp_a7fddb0180404635873a19e2c383c170',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610286.0,
+                                     'id': 'resp_a7fddb0180404635873a19e2c383c170',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [{'args': {'task_id': '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8'},
+                               'id': 'call_46d55869c0864834a666f5a7',
+                               'name': 'check_async_task',
+                               'type': 'tool_call'}],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2031},
+                                  'input_tokens': 4058,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 75,
+                                  'total_tokens': 4133}},
+              {'additional_kwargs': {},
+               'artifact': None,
+               'content': '{"status": "running", "thread_id": '
+                          '"01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8"}',
+               'id': 'b2f56b3f-3065-4243-82f7-bc3987da2467',
+               'name': 'check_async_task',
+               'response_metadata': {},
+               'status': 'success',
+               'tool_call_id': 'call_46d55869c0864834a666f5a7',
+               'type': 'tool'},
+              {'additional_kwargs': {},
+               'content': [{'annotations': [],
+                            'id': 'msg_543b4ee6361b47a58e6cb31de616d87f',
+                            'text': '当前任务仍在后台运行中。\n'
+                                    '\n'
+                                    '**任务状态：运行中（running）**\n'
+                                    '- **任务 ID：** '
+                                    '`01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8`\n'
+                                    '- **任务内容：** 总结 async subagent 的关键行为\n'
+                                    '\n'
+                                    '任务尚未完成，目前没有可汇报的结果。需要我稍后再查询，或者有其他处理需求吗？',
+                            'type': 'text'}],
+               'id': 'resp_ac94eee559f94daa8003f148cd8389ac',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610288.0,
+                                     'id': 'resp_ac94eee559f94daa8003f148cd8389ac',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2048},
+                                  'input_tokens': 4219,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 92,
+                                  'total_tokens': 4311}}]}
+\n=== third response ===
+{'async_tasks': {'01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8': {'agent_name': 'researcher',
+                                                          'created_at': '2026-09-28T15:44:42Z',
+                                                          'last_checked_at': '2026-09-28T15:44:47Z',
+                                                          'last_updated_at': '2026-09-28T15:44:52Z',
+                                                          'run_id': '01a0e8b0-beca-70b0-bbb4-8a482ba6a956',
+                                                          'status': 'running',
+                                                          'task_id': '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8',
+                                                          'thread_id': '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8'}},
+ 'files': {},
+ 'messages': [{'additional_kwargs': {},
+               'content': '请把这个任务交给 researcher 异步处理：用后台任务总结 async subagent '
+                          '的关键行为。',
+               'id': 'd7b99112-ed93-437d-93d0-c1500cd0d919',
+               'name': None,
+               'response_metadata': {},
+               'type': 'human'},
+              {'additional_kwargs': {},
+               'content': [{'arguments': '{"description":"请总结 async subagent '
+                                         '的关键行为。你需要研究并梳理 async subagent '
+                                         '的核心机制，包括：1) '
+                                         '它的启动方式（start_async_task）；2) '
+                                         '它的运行模式（后台运行、立即返回 task_id）；3) '
+                                         '它的状态查询机制（check_async_task、list_async_tasks）；4) '
+                                         '它的任务更新与取消机制（update_async_task、cancel_async_task）；5) '
+                                         '它与同步 subagent '
+                                         '的区别。最后以清晰的要点列表形式输出总结报告。","subagent_type":"researcher"}',
+                            'call_id': 'call_bb6b5ef093b549389889a8c9',
+                            'id': 'fc_b4760ecdb51c459f922b0b7f96a797f2',
+                            'name': 'start_async_task',
+                            'status': 'completed',
+                            'type': 'function_call'},
+                           {'annotations': [],
+                            'id': 'msg_560c618569c446d1bb0216a8446d3838',
+                            'text': '\n\n',
+                            'type': 'text'}],
+               'id': 'resp_8ae9b17d6b904ae0a1b450d8f769af0e',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610277.0,
+                                     'id': 'resp_8ae9b17d6b904ae0a1b450d8f769af0e',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [{'args': {'description': '请总结 async subagent '
+                                                       '的关键行为。你需要研究并梳理 async '
+                                                       'subagent 的核心机制，包括：1) '
+                                                       '它的启动方式（start_async_task）；2) '
+                                                       '它的运行模式（后台运行、立即返回 '
+                                                       'task_id）；3) '
+                                                       '它的状态查询机制（check_async_task、list_async_tasks）；4) '
+                                                       '它的任务更新与取消机制（update_async_task、cancel_async_task）；5) '
+                                                       '它与同步 subagent '
+                                                       '的区别。最后以清晰的要点列表形式输出总结报告。',
+                                        'subagent_type': 'researcher'},
+                               'id': 'call_bb6b5ef093b549389889a8c9',
+                               'name': 'start_async_task',
+                               'type': 'tool_call'}],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2003},
+                                  'input_tokens': 3650,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 345,
+                                  'total_tokens': 3995}},
+              {'additional_kwargs': {},
+               'artifact': None,
+               'content': 'Launched async subagent. task_id: '
+                          '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8',
+               'id': 'ea6ec2aa-bfd5-40cb-a93f-328a2e53b945',
+               'name': 'start_async_task',
+               'response_metadata': {},
+               'status': 'success',
+               'tool_call_id': 'call_bb6b5ef093b549389889a8c9',
+               'type': 'tool'},
+              {'additional_kwargs': {},
+               'content': [{'annotations': [],
+                            'id': 'msg_a917a18fe8f8425fb236a0c9e3f8e49a',
+                            'text': '已将任务交给 researcher 异步处理。\n'
+                                    '\n'
+                                    '**任务详情：**\n'
+                                    '- **任务 ID：** '
+                                    '`01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8`\n'
+                                    '- **任务内容：** 总结 async subagent '
+                                    '的关键行为，包括启动方式、后台运行模式、状态查询、任务更新与取消机制，以及它与同步 '
+                                    'subagent 的区别。\n'
+                                    '- **处理方式：** 后台异步运行，任务完成后可随时查看结果。\n'
+                                    '\n'
+                                    '需要查看进度或结果时，告诉我即可，我会为你查询该任务的最新状态。',
+                            'type': 'text'}],
+               'id': 'resp_99b04d5b1e414ad5a62c1733b3d9b362',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610282.0,
+                                     'id': 'resp_99b04d5b1e414ad5a62c1733b3d9b362',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2022},
+                                  'input_tokens': 3903,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 157,
+                                  'total_tokens': 4060}},
+              {'additional_kwargs': {},
+               'content': '刚才那个后台任务现在进展如何？',
+               'id': '4b9c1921-8751-4d63-adc2-3433d3091297',
+               'name': None,
+               'response_metadata': {},
+               'type': 'human'},
+              {'additional_kwargs': {},
+               'content': [{'arguments': '{"task_id":"01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8"}',
+                            'call_id': 'call_46d55869c0864834a666f5a7',
+                            'id': 'fc_82201738d544464499e82843e7d53c9e',
+                            'name': 'check_async_task',
+                            'status': 'completed',
+                            'type': 'function_call'},
+                           {'annotations': [],
+                            'id': 'msg_c2fb847b2c4f48e8a57bdb9e3b47af6d',
+                            'text': '\n\n',
+                            'type': 'text'}],
+               'id': 'resp_a7fddb0180404635873a19e2c383c170',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610286.0,
+                                     'id': 'resp_a7fddb0180404635873a19e2c383c170',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [{'args': {'task_id': '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8'},
+                               'id': 'call_46d55869c0864834a666f5a7',
+                               'name': 'check_async_task',
+                               'type': 'tool_call'}],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2031},
+                                  'input_tokens': 4058,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 75,
+                                  'total_tokens': 4133}},
+              {'additional_kwargs': {},
+               'artifact': None,
+               'content': '{"status": "running", "thread_id": '
+                          '"01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8"}',
+               'id': 'b2f56b3f-3065-4243-82f7-bc3987da2467',
+               'name': 'check_async_task',
+               'response_metadata': {},
+               'status': 'success',
+               'tool_call_id': 'call_46d55869c0864834a666f5a7',
+               'type': 'tool'},
+              {'additional_kwargs': {},
+               'content': [{'annotations': [],
+                            'id': 'msg_543b4ee6361b47a58e6cb31de616d87f',
+                            'text': '当前任务仍在后台运行中。\n'
+                                    '\n'
+                                    '**任务状态：运行中（running）**\n'
+                                    '- **任务 ID：** '
+                                    '`01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8`\n'
+                                    '- **任务内容：** 总结 async subagent 的关键行为\n'
+                                    '\n'
+                                    '任务尚未完成，目前没有可汇报的结果。需要我稍后再查询，或者有其他处理需求吗？',
+                            'type': 'text'}],
+               'id': 'resp_ac94eee559f94daa8003f148cd8389ac',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610288.0,
+                                     'id': 'resp_ac94eee559f94daa8003f148cd8389ac',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 2048},
+                                  'input_tokens': 4219,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 92,
+                                  'total_tokens': 4311}},
+              {'additional_kwargs': {},
+               'content': '补充约束：完成时请把答案写成 3 条 bullet。',
+               'id': '4fd77e96-e5b5-4b4b-97f1-59a7e26f436d',
+               'name': None,
+               'response_metadata': {},
+               'type': 'human'},
+              {'additional_kwargs': {},
+               'content': [{'arguments': '{"message":"补充约束：最终报告请将答案写成恰好 3 条 '
+                                         'bullet 的格式，内容仍为总结 async subagent '
+                                         '的关键行为。任务完成后请按此格式输出。","task_id":"01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8"}',
+                            'call_id': 'call_18f150b8d4204a8fb1d9f1b0',
+                            'id': 'fc_526c01d5b6d34f35a9102ec60baf20bb',
+                            'name': 'update_async_task',
+                            'status': 'completed',
+                            'type': 'function_call'},
+                           {'annotations': [],
+                            'id': 'msg_f51ca693ae7f4e69ab3463f78020c451',
+                            'text': '\n\n',
+                            'type': 'text'}],
+               'id': 'resp_998c1245ec79446ab944aca6f5824f95',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610291.0,
+                                     'id': 'resp_998c1245ec79446ab944aca6f5824f95',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [{'args': {'message': '补充约束：最终报告请将答案写成恰好 3 条 '
+                                                   'bullet 的格式，内容仍为总结 async '
+                                                   'subagent '
+                                                   '的关键行为。任务完成后请按此格式输出。',
+                                        'task_id': '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8'},
+                               'id': 'call_18f150b8d4204a8fb1d9f1b0',
+                               'name': 'update_async_task',
+                               'type': 'tool_call'}],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 0},
+                                  'input_tokens': 4346,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 127,
+                                  'total_tokens': 4473}},
+              {'additional_kwargs': {},
+               'artifact': None,
+               'content': 'Updated async subagent. task_id: '
+                          '01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8',
+               'id': 'b6e2971d-06e2-492b-a624-43296fbbf3aa',
+               'name': 'update_async_task',
+               'response_metadata': {},
+               'status': 'success',
+               'tool_call_id': 'call_18f150b8d4204a8fb1d9f1b0',
+               'type': 'tool'},
+              {'additional_kwargs': {},
+               'content': [{'annotations': [],
+                            'id': 'msg_77b5426b800d4c549dbf25e5b25f8c7d',
+                            'text': '已向后台任务发送补充指令。\n'
+                                    '\n'
+                                    '**更新内容：** 要求最终答案采用**恰好 3 条 bullet** '
+                                    '的格式输出，同时保留原有的任务主题（总结 async subagent '
+                                    '的关键行为）。\n'
+                                    '\n'
+                                    '- **任务 ID：** '
+                                    '`01a0e8b0-96ab-7c62-b1b1-8dc4c23dd3c8`\n'
+                                    '- **当前状态：** 仍在运行中，已接收新约束\n'
+                                    '\n'
+                                    '任务完成时会按新的格式要求返回结果。需要我查询最新进展时，随时告诉我。',
+                            'type': 'text'}],
+               'id': 'resp_9b68950c0cf94a609d7001801f02f67e',
+               'invalid_tool_calls': [],
+               'name': None,
+               'response_metadata': {'created_at': 1790610294.0,
+                                     'id': 'resp_9b68950c0cf94a609d7001801f02f67e',
+                                     'metadata': {},
+                                     'model': 'u2-flash',
+                                     'model_name': 'u2-flash',
+                                     'model_provider': 'openai',
+                                     'object': 'response',
+                                     'service_tier': 'auto',
+                                     'status': 'completed'},
+               'tool_calls': [],
+               'type': 'ai',
+               'usage_metadata': {'input_token_details': {'cache_read': 0},
+                                  'input_tokens': 4562,
+                                  'output_token_details': {'reasoning': 0},
+                                  'output_tokens': 119,
+                                  'total_tokens': 4681}}]}
+(async-subagent-demo) (base) xiaoberber@DESKTOP-V8BOMP3:~/self_study/deepagents/projects/async-subagent-demo$ 
