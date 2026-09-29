@@ -12,6 +12,7 @@
 | [任务规划与分解](ch04-任务规划/README.md) | 第 4 章：write_todos 任务规划在 v0.7 按需启用，Middleware 两类 Hook 机制、TodoList 源码级剖析、trigger 与摘要实现，附多步骤 Search Agent 实操与 LangSmith Trace | 2026-09-23 |
 | [子 Agent 与上下文隔离](ch05-子Agent与上下文隔离/README.md) | 第 5 章：Context Quarantine 上下文隔离，task 委派、字典/general-purpose/CompiledSubAgent 三种形态、多子 Agent 协作与结构化 JSON 输出，附字段继承规则与排查表 | 2026-09-25 |
 | [异步子 Agent](ch06-异步子Agent/README.md) | 第 6 章：Async Subagent 预览特性，Agent Protocol/Server/CLI/SDK 服务化四角色、5 把遥控器、async_tasks 独立通道、ASGI/HTTP 与三种拓扑，附单部署最小 Demo 真实跑通的完整输出与踩坑记录 | 2026-09-28 |
+| [Skills — 可复用的 Agent 能力包](ch07-Skills可复用的Agent能力包/README.md) | 第 7 章：开放 Agent Skills 规范与 SKILL.md 结构、Progressive Disclosure 三级加载、Filesystem/State/Store 三种后端与动态加载、子 Agent 继承边界、deny/interrupt 权限控制与共享+个人分层、沙箱脚本与 QuickJS 解释器技能，附 Skills vs Memory vs Tools 对比及 Trae 环境现场对照 | 2026-09-29 |
 
 ## 目录结构
 
@@ -32,8 +33,11 @@
 ├── ch05-子Agent与上下文隔离/  # 第 5 章学习笔记
 │   ├── README.md              # 笔记正文
 │   └── imgs/                  # 课程配图
-└── ch06-异步子Agent/          # 第 6 章学习笔记
+├── ch06-异步子Agent/          # 第 6 章学习笔记
+│   ├── README.md              # 笔记正文
+│   ├── run_demo_output.txt    # 最小 Demo 完整终端输出
+│   └── imgs/                  # 课程配图（15/16/17）
+└── ch07-Skills可复用的Agent能力包/  # 第 7 章学习笔记
     ├── README.md              # 笔记正文
-    ├── run_demo_output.txt    # 最小 Demo 完整终端输出
-    └── imgs/                  # 课程配图（15/16/17）
+    └── imgs/                  # 课程配图（19–25）
 ```
