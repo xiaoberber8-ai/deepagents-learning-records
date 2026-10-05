@@ -14,6 +14,7 @@
 | [异步子 Agent](ch06-异步子Agent/README.md) | 第 6 章：Async Subagent 预览特性，Agent Protocol/Server/CLI/SDK 服务化四角色、5 把遥控器、async_tasks 独立通道、ASGI/HTTP 与三种拓扑，附单部署最小 Demo 真实跑通的完整输出与踩坑记录 | 2026-09-28 |
 | [Skills — 可复用的 Agent 能力包](ch07-Skills可复用的Agent能力包/README.md) | 第 7 章：开放 Agent Skills 规范与 SKILL.md 结构、Progressive Disclosure 三级加载、Filesystem/State/Store 三种后端与动态加载、子 Agent 继承边界、deny/interrupt 权限控制与共享+个人分层、沙箱脚本与 QuickJS 解释器技能，附 Skills vs Memory vs Tools 对比及 Trae 环境现场对照 | 2026-09-29 |
 | [长期记忆 — 跨对话记忆](ch08-长期记忆/README.md) | 第 8 章：Checkpointer 短期记忆与 Store 长期记忆、StateBackend 源码级剖析（files 只是内存 dict）、CompositeBackend 路径路由与 agent/user/org 三种 namespace、AGENTS.md 开放规范与 MemoryMiddleware、记忆六维度，附 SqliteStore 跨 thread 跨进程两轮对话实验（含完整终端记录与 3 个踩坑） | 2026-10-05 |
+| [Human-in-the-Loop 人机协作](ch09-Human-in-the-Loop人机协作/README.md) | 第 9 章：interrupt_on 工具审批与风险三级分层、approve/edit/reject/respond 四决策、when 条件中断、v2 中断-恢复协议与批量决策、底层 interrupt() 与自定义 Middleware，附五场景审批实验完整终端记录（edit 防重复外发护栏、模型前置检查与自我审查静默等 4 个踩坑） | 2026-10-05 |
 
 ## 目录结构
 
@@ -41,8 +42,12 @@
 ├── ch07-Skills可复用的Agent能力包/  # 第 7 章学习笔记
 │   ├── README.md              # 笔记正文
 │   └── imgs/                  # 课程配图（19–25）
-└── ch08-长期记忆/             # 第 8 章学习笔记
+├── ch08-长期记忆/             # 第 8 章学习笔记
+│   ├── README.md              # 笔记正文
+│   ├── run_output.txt         # 跨两轮对话实验完整终端记录
+│   └── imgs/                  # 课程配图（26–28）
+└── ch09-Human-in-the-Loop人机协作/  # 第 9 章学习笔记
     ├── README.md              # 笔记正文
-    ├── run_output.txt         # 跨两轮对话实验完整终端记录
-    └── imgs/                  # 课程配图（26–28）
+    ├── run_output.txt         # 五场景审批实验完整终端记录
+    └── imgs/                  # 课程配图（17/18/29）
 ```

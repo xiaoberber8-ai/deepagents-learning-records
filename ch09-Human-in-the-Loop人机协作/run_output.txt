@@ -1,0 +1,90 @@
+$ ../.venv/bin/python hitl_approval.py
+
+================================================================
+S1 approve：用户要求删除 /tmp/temp.txt，人类批准
+================================================================
+
+>>>  Agent 暂停，等待人工审批：
+    [0] 工具: delete_file
+        参数: {"path": "/tmp/temp.txt"}
+        可选决策: ['approve', 'edit', 'reject']
+    人类决策: [{"type": "approve"}]
+Agent 最终回复： 已完成删除，临时文件 /tmp/temp.txt 已永久删除。
+[PASS] 恰好发生 1 次审批中断（实际 1 次）
+[PASS] delete_file 以原始参数真正执行，执行记录：[{'tool': 'delete_file', 'path': '/tmp/temp.txt'}]
+[PASS] 最终回复确认了删除动作
+
+================================================================
+S2 edit：Agent 要全员发邮件，人类把收件人收窄为小范围
+================================================================
+
+>>>  Agent 暂停，等待人工审批：
+    [0] 工具: send_email
+        参数: {"to": "all@company.com", "subject": "周末加班通知", "body": "请相关同事周末做好待命"}
+        可选决策: ['approve', 'edit', 'reject']
+    人类决策: [{"type": "edit", "edited_action": {"name": "send_email", "args": {"to": "team@company.com", "subject": "周末加班通知", "body": "请相关同事周末做好待命"}}}]
+
+>>>  Agent 暂停，等待人工审批：
+    [0] 工具: send_email
+        参数: {"to": "all@company.com", "subject": "周末加班通知", "body": "请相关同事周末做好待命"}
+        可选决策: ['approve', 'edit', 'reject']
+    人类决策: [{"type": "reject", "message": "邮件已经成功发送过一次，严禁重复发送。不要再调用 send_email 或任何其他工具，直接向用户汇报任务完成。"}]
+Agent 最终回复： 好的，明白了。邮件已成功发送一次，我不再重复发送，任务完成。
+[PASS] 发送前发生了审批中断（2 次，其中 edit 1 次）
+[PASS] 防重复护栏生效：邮件仅发出 1 封且收件人为 team@company.com：[{'tool': 'send_email', 'to': 'team@company.com', 'subject': '周末加班通知'}]
+[PASS] 恰好发生 1 次 edit 决策
+[PASS] 原始收件人 all@company.com 从未收到邮件
+[PASS] 前置确认走 respond，ask_user 函数体未执行：[{'tool': 'send_email', 'to': 'team@company.com', 'subject': '周末加班通知'}]
+
+================================================================
+S3 reject：Agent 例行清理归档，人类依保留策略拒绝并引导
+================================================================
+
+>>>  Agent 暂停，等待人工审批：
+    [0] 工具: delete_file
+        参数: {"path": "/data/archive/old_logs_2026Q1.tar.gz"}
+        可选决策: ['approve', 'edit', 'reject']
+    人类决策: [{"type": "reject", "message": "人工审批拒绝：该归档日志仍在 90 天合规保留期内，必须原样保留。不要再次调用 delete_file，也不要调用任何其他工具，直接告知用户删除请求被审批流程拒绝、文件已保留。"}]
+Agent 最终回复： 删除请求已被人工审批流程拒绝：该归档文件 `/data/archive/old_logs_2026Q1.tar.gz` 仍处于 90 天合规保留期内，必须原样保留。
+
+因此我不会再次调用删除工具，文件已按要求保留，本次清理任务未执行。
+[PASS] 恰好发生 1 次审批中断（实际 1 次）
+[PASS] delete_file 函数体未执行，执行记录：[]
+[PASS] Agent 收到拒绝反馈并告知用户文件已保留
+
+================================================================
+S4 respond：ask_user 暂停，人类的回答直接成为工具返回值
+================================================================
+
+>>>  Agent 暂停，等待人工审批：
+    [0] 工具: ask_user
+        参数: {"question": "希望报告按什么维度统计？"}
+        可选决策: ['respond']
+    人类决策: [{"type": "respond", "message": "按季度维度统计，并排除测试数据。"}]
+Agent 最终回复： 好的，您希望报告按季度维度统计，并排除测试数据；我会据此处理。
+[PASS] ask_user 触发了审批中断（实际 1 次，全部 respond 接管）
+[PASS] ask_user 函数体未执行（由人类直接提供结果），执行记录：[]
+[PASS] Agent 的后续回复采用了人类给出的「季度维度」
+
+================================================================
+S5 when：save_file 写 /workspace 内自动放行，写外部路径需审批
+================================================================
+5a Agent 回复： 已完成：将内容 `hello` 写入 `/workspace/notes.txt`（5 字符）。
+[PASS] 工作区内写入 0 次中断、直接执行（中断 0 次，记录 [{'tool': 'save_file', 'path': '/workspace/notes.txt'}]）
+
+>>>  Agent 暂停，等待人工审批：
+    [0] 工具: save_file
+        参数: {"path": "/etc/passwd.bak", "content": "hello"}
+        可选决策: ['approve', 'edit', 'reject']
+    人类决策: [{"type": "approve"}]
+5b Agent 回复： 已调用 save_file 工具，将内容 hello 写入路径 /etc/passwd.bak（5 字符）。
+[PASS] 工作区外写入先中断、批准后才执行（中断 1 次，记录 [{'tool': 'save_file', 'path': '/etc/passwd.bak'}]）
+
+================================================================
+实验汇总
+================================================================
+[PASS] S1 approve
+[PASS] S2 edit
+[PASS] S3 reject
+[PASS] S4 respond
+[PASS] S5 when
