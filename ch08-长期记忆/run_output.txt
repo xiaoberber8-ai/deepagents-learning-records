@@ -1,0 +1,55 @@
+$ .venv/bin/python easyagents/cross_thread_memory.py reset
+已删除记忆库 /home/xiaoberber/self_study/deepagents/projects/research_deepagent/easyagents/ch08_memory.db
+============================================================
+第一轮对话（thread_id = thread-A）：写入长期记忆
+============================================================
+Failed to get info from `https://api.smith.langchain.com:` LangSmithConnectionError("Connection error caused failure to GET /info in LangSmith API. Please confirm your internet connection. ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))\nContent-Length: None\nAPI Key: lsv2_********************************************fe")
+Run compression is not enabled. Please update to the latest version of LangSmith. Falling back to regular multipart ingestion.
+Agent 回复： 文件已确认写入，内容如下：
+
+- **暗号**：蓝色河马
+- **代码风格偏好**：注释使用中文，变量名使用英文
+
+已保存至 `/memories/AGENTS.md`，以后我会记住这两条信息。
+
+--- 直接检查 Store（namespace=('ch08-demo',)）---
+key = /AGENTS.md
+content:
+# 用户偏好记忆
+
+## 暗号
+- 用户的暗号是「蓝色河马」
+
+## 代码风格偏好
+- 注释使用中文
+- 变量名使用英文
+------------------------------------------------------------
+============================================================
+第二轮对话（thread_id = thread-B，全新对话，无历史消息）
+============================================================
+Agent 回复： 根据长期记忆中的内容：
+
+- 你的暗号是：「蓝色河马」
+- 你喜欢的注释风格：使用**中文注释**（同时变量名使用英文）
+
+--- 断言结果 ---
+[PASS] 第二轮回答中回忆出暗号「蓝色河马」
+[PASS] 第二轮回答中回忆出偏好「注释用中文」
+
+======================================================================
+补充验证：另起一个全新的 Python 进程，只跑 round2，复用磁盘上的 ch08_memory.db
+（跨 thread + 跨进程，不重跑 round1，这是长期记忆持久化的最强证据）
+======================================================================
+
+$ .venv/bin/python easyagents/cross_thread_memory.py round2
+============================================================
+第二轮对话（thread_id = thread-B，全新对话，无历史消息）
+============================================================
+Agent 回复： 根据长期记忆中的内容：
+
+1. **暗号**：「蓝色河马」
+2. **代码偏好**：注释使用中文，变量名使用英文
+
+--- 断言结果 ---
+[PASS] 第二轮回答中回忆出暗号「蓝色河马」
+[PASS] 第二轮回答中回忆出偏好「注释用中文」
